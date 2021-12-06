@@ -3,45 +3,45 @@ Durante mucho tiempo estuve buscando opciones para poder crear sitios estáticos
 ## 1, Creando nuestro sitio muestra.
 Para este ejemplo generaremos un sitio estatico usando html y tailwindcss. El primer paso es crear una carpeta llamada ´sitio-estatico-tailwind´. Dentro de esta carpeta guardaremos todos los archivos que usaremos para generar nuestro sitio.
 
-´´´bash
+```bash
 mkdir sitio-estatico-tailwind
 cd sitio-estatico-tailwind
-´´´
+```
 
 Estando dentro de la carpeta ´sitio-estatico-tailwind´ iniciemos un archivo ´package.json´ este archivo llevará el seguimiento de los paquetes de javascript que usaremos para este proyecto. (Para este punto ya tienes que tener ´node´ instalado.
 
-´´´bash
+```bash
 npm init -y
-´´´
+```
 Ahora instalaremos [Tailwind](). Usando la terminal agregar los siguientes comando:
 
-´´´bash
+```bash
 npm install -D tailwindcss@latest postcss@latest autoprefixer@latest postcss-cli@latest
 npx tailwindcss init -p
 touch styles.css
 mkdir str
-´´´
+```
 
 Esto nos generará la estructura básica de archivos que necesitamos para utilizar Tailwind desde nuestro sitio estático. El siguiente paso es abrir el archvio ´styles.css´ y agregar el siguiente código:
 
-´´´css
+```css
 /* styles.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-´´´
+```
 
 Ahora abrimos nuestro archivo ´package.json´ y editamos valor de la llave ´scripts´ :
 
-´´´json
+```json
   "scripts": {
     "build": "postcss styles.css -o src/styles.css"
   },
-´´´
+```
 
 Para este punto, debemos tener dentro de nuestra carpeta ´sitio-estatico-tailwind´ un folder llamado ´src´, desplazemonos al mismo y generemos un archivo llamado ´index.html´ y copiamos este código:
 
-´´´html
+```html
 <!--index.html-->
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +58,7 @@ Para este punto, debemos tener dentro de nuestra carpeta ´sitio-estatico-tailwi
     </div>
 </body>
 </html>
-´´´
+```
 
 Listo tenemos una página estatica sencilla estilizada con TailwindCSS. 
 
